@@ -34,23 +34,30 @@ print("The Adjacent Matrix: ")
 for i in adj_matrix[1:]:
     print(i[1:])
 
-#creates the graph
+#Create the graph
+
 G = nx.Graph()
 
-#a nested loops that iterates on all of the 2D array to checks the ones and draw an edge between them
+#Nested loops that iterates on all of the 2D array to checks the ones and draw an edge between them
 for i in range(1, n+1):
+    
     for j in range(1, n+1):
+        
         if adj_matrix[i][j] == 1:
+            
             G.add_edge(i, j)
 
-#draw the graph 
+#Draw the graph 
+
 nx.draw(G, with_labels=True)
-#show the graph
+
+#Show the graph
+
 plt.show()
 
 #function to count the possible paths between 2 points
 def count_paths(adj_matrix, start, end, visited):
-    #the base case checks to return 1 on the recurion
+    #the base case checks to return 1 on the recurio-n
     if start == end:
         return 1
     
